@@ -6,15 +6,17 @@ int main()
 	int i, n;
 	printf("nhap vao so N: ");
 	scanf("%d", &n);
+	bool songuyento = true;
 	for(i=2; i<=sqrt(n)+1;i++)
 	{
 		if (n%i==0) 
 			{
-				printf("Khong phai so nguyen to"); 
+				songuyento = false;
 				break;
 			}
-		if (i>sqrt(n))
-			printf("So nguyen to");
 	}
-
+	if (songuyento)
+        printf("La so nguyen to");
+    else
+        printf("Khong phai so nguyen to");
 }
