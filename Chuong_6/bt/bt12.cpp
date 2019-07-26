@@ -7,7 +7,7 @@ int main()
 	printf("nhap vao so N: ");
 	scanf("%d", &n);
 	bool songuyento = true;
-	for(i=2; i<=sqrt(n)+1;i++)
+	for(i=2; i<=sqrt(n);i++)
 	{
 		if (n%i==0) 
 			{
