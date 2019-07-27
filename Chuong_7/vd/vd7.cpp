@@ -13,7 +13,7 @@ int main()
 {
 printf("Nhap vao ban kinh hinh cau : ");
 scanf("%f", &frad);
-printf("Dien tich hinh cau: %10.3f.\n", AREA_CIRCLE(frad));
+printf("Dien tich hinh cau: %10.3f.\n", AREA_CIRCLE (frad));
 
 }
 
