@@ -3,20 +3,20 @@
 
 int main()
 {
-	int i, n;
+	int i, n, icheck;
 	printf("nhap vao so N: ");
 	scanf("%d", &n);
-	bool songuyento = true;
+	icheck=0;
 	for(i=2; i<=sqrt(n);i++)
-	{
-		if (n%i==0) 
+		{
+			if (n%i==0) 
 			{
-				songuyento = false;
-				break;
+				icheck++; break;
 			}
-	}
-	if (songuyento)
-        printf("La so nguyen to");
+		}
+	if (icheck==0 && n!=1)
+    printf("La so nguyen to");
     else
-        printf("Khong phai so nguyen to");
+    printf("Khong phai so nguyen to");
+
 }
