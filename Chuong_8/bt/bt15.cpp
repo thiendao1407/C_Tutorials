@@ -5,6 +5,8 @@ void timphong(int s[]);
 void traphong(int s[]);
 void phongtrong(int s[]);
 void phongthue(int s[]);
+void xoabonhodem();
+
 
 int l, k, j;
 
@@ -14,7 +16,7 @@ main() {
   do {
     printf("Nhap so luong phong: ");
     scanf("%d", & l);
-    fflush(stdin);
+    xoabonhodem();
   } while (l < 1 || l > 50);
   printf("1-Empty)\n");
   printf("0-Occupied\n");
@@ -22,7 +24,7 @@ main() {
     do {
       printf("Nhap trang thai phong %d: ", i + 1);
       scanf("%d", & s[i]);
-      fflush(stdin);
+      xoabonhodem();
     } while (s[i] != 1 && s[i] != 0);
   }
 
@@ -35,7 +37,7 @@ main() {
     printf("(Luu y: Ban phai nhap vao mot trong cac so: 1,2,3,4,5.)\n");
     printf("Chon muc tuong ung: ");
     scanf("%d", & menu);
-    fflush(stdin);
+    xoabonhodem();
     printf("\n");
     switch (menu) {
     case 1:
@@ -58,7 +60,7 @@ void timphong(int s[]) {
   do {
     printf("Ban muon tim phong, moi ban chon so phong: ");
     scanf("%d", & k);
-    fflush(stdin);
+    xoabonhodem();
   } while (k < 1 || k > l);
   if (s[k - 1] == 1) {
     printf("Phong %d trong\n", k);
@@ -66,7 +68,7 @@ void timphong(int s[]) {
     do {
       printf("1. Yes of 2. No?\n");
       scanf("%d", & j);
-      fflush(stdin);
+      xoabonhodem();
     } while (j != 1 && j != 2);
     if (j == 1) {
       printf("Ban da thue phong %d\n", k);
@@ -81,7 +83,7 @@ void traphong(int s[]) {
   do {
     printf("Ban muon tra phong, moi ban nhap so phong: ");
     scanf("%d", & k);
-    fflush(stdin);
+    xoabonhodem();
   } while (k < 1 || k > l);
   if (s[k - 1] == 1)
     printf("Phong %d chua duoc thue, moi ban chuyen den muc 4", k);
@@ -90,7 +92,7 @@ void traphong(int s[]) {
     do {
       printf("1. Yes of 2. No?\n");
       scanf("%d", & j);
-      fflush(stdin);
+      xoabonhodem();
     } while (j != 1 && j != 2);
     if (j == 1) {
       printf("Ban da tra phong %d\n", k);
@@ -113,4 +115,9 @@ void phongthue(int s[]) {
   for (k = 1; k < l + 1; k++)
     if (s[k - 1] == 0) printf(" %d,", k);
   printf("\n\n");
+}
+
+void xoabonhodem(){
+char c[50];
+gets(c);
 }
