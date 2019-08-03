@@ -12,7 +12,7 @@ main() {
   do {
     printf("Nhap mot so duong: ");
     scanf("%d", & i);
-    xoabonhodem(); // Vi tri dat ham xoa o nho dem
+    xoabonhodem(); // Vi tri dat ham xoa bo nho dem
   } while (i < 1);
   printf("%d", i);
 }
