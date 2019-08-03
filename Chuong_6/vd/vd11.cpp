@@ -4,5 +4,5 @@ int main()
 {
 	int i=0;
 	while(i++ <3)
-	printf("%s", MSG);
+	printf("%d %s",i, MSG);
 }

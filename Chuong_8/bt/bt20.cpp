@@ -1,8 +1,23 @@
 #include<stdio.h>
 #include<string.h>
 
-int check(char s[], char t[]);
-int check(char s[], char t[]) {
+void check(char s[], char t[]);
+
+main() {
+  char s[50], t[50];
+  do {
+    printf("nhap vao chuoi 1: ");
+    gets(s);
+  } while (strlen(s) > 50);
+
+  do {
+    printf("nhap vao chuoi 2: ");
+    gets(t);
+  } while (strlen(t) > 50);
+  check(s,t);
+}
+
+void check(char s[], char t[]) {
   int l, n, i, j, k;
   l = strlen(s);
   n = strlen(t);
@@ -22,18 +37,4 @@ int check(char s[], char t[]) {
     printf("vi tri la: %d", i + 1);
   else
     printf("khong co dau");
-}
-
-main() {
-  char s[50], t[50];
-  do {
-    printf("nhap vao chuoi 1: ");
-    gets(s);
-  } while (strlen(s) > 50);
-
-  do {
-    printf("nhap vao chuoi 2: ");
-    gets(t);
-  } while (strlen(t) > 50);
-  check(s, t);
 }
