@@ -117,7 +117,8 @@ void phongthue(int s[]) {
   printf("\n\n");
 }
 
-void xoabonhodem(){
-char c[50];
-gets(c);
+void xoabonhodem() {
+  for(;;)
+    if(getchar()=='\n')
+        break;
 }

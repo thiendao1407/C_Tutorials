@@ -3,8 +3,9 @@
 // Ham xoa bo nho dem
 void xoabonhodem();
 void xoabonhodem() {
-  char c[50];
-  gets(c);
+  while(true)
+    if(getchar()=='\n')
+        break;
 }
 
 main() {

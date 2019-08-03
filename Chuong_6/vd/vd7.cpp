@@ -1,5 +1,4 @@
 #include<stdio.h>
-
 #define DAU_CHAM '.'
 
 int main()
