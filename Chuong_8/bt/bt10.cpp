@@ -1,7 +1,29 @@
+// Doc so
 #include<stdio.h>
 
-int docso();
-int docso(char s[9][5], int n) {
+int docso(char s[][5], int n);
+
+main() {
+  int n;
+  char s[9][5] = {
+    "mot",
+    "hai",
+    "ba",
+    "bon",
+    "nam",
+    "sau",
+    "bay",
+    "tam",
+    "chin"
+  };
+  do {
+    printf("nhap vao so: ");
+    scanf("%d", & n);
+  } while (n <= 0 || n > 999);
+  docso(s, n);
+}
+// Ham doc so
+int docso(char s[][5], int n) {
   int t, c, d;
   t = n / 100, c = (n % 100) / 10, d = n % 10;
 
@@ -25,24 +47,4 @@ int docso(char s[9][5], int n) {
     if (n < 10) printf("le ");
   }
   return docso(s, n);
-}
-
-main() {
-  int n;
-  char s[9][5] = {
-    "mot",
-    "hai",
-    "ba",
-    "bon",
-    "nam",
-    "sau",
-    "bay",
-    "tam",
-    "chin"
-  };
-  do {
-    printf("nhap vao so: ");
-    scanf("%d", & n);
-  } while (n <= 0 || n > 999);
-  docso(s, n);
 }

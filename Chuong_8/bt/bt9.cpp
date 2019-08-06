@@ -1,5 +1,5 @@
+// Quy doi nam am lich
 #include<stdio.h>
-
 
 main()
 {

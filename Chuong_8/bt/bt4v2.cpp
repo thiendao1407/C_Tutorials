@@ -1,3 +1,4 @@
+// Xoa ki tu trang thua
 #include<stdio.h>
 #include<string.h>
 

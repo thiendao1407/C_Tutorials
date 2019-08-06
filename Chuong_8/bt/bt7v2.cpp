@@ -1,13 +1,8 @@
-#include <stdio.h>
+// In ra chuoi dao nguoc
+#include<stdio.h>
+#include<string.h>
 
-#include <string.h>
-
-int dao(char);
-int dao(char s[30])
-{
-  for (int l = strlen(s) - 1; l >= 0; l--)
-    printf("%c", s[l]);
-}
+void dao(char s[]);
 
 main()
 {
@@ -15,4 +10,9 @@ main()
   printf("Nhap vao chuoi ki tu: ");
   gets(s);
   dao(s);
+}
+void dao(char s[])
+{
+  for (int l = strlen(s) - 1; l >= 0; l--)
+    printf("%c", s[l]);
 }

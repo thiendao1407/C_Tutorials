@@ -1,3 +1,4 @@
+// Kiem tra tinh doi xung
 #include<stdio.h>
 #include<string.h>
 

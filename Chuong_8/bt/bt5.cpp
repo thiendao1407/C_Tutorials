@@ -1,9 +1,10 @@
+// CHU IN HOA
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
 
-void inhoa();
-void inthuong();
+void inhoa(char s[], int l);
+void inthuong(char s[], int l);
 void inhoa(char s[], int l) {
   int i;
   for (i = 0; i < l; i++)

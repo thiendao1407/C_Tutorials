@@ -1,5 +1,5 @@
+// In ra chuoi dao nguoc
 #include<stdio.h>
-
 #include<string.h>
 
 main()

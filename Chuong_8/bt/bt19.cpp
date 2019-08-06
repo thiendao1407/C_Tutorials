@@ -1,3 +1,4 @@
+// Sao chep mot so ki tu sang chuoi khac tu vi tri xac dinh
 #include<stdio.h>
 #include<string.h>
 

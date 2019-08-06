@@ -1,5 +1,5 @@
+// Xuong dong sau moi tu
 #include<stdio.h>
-
 #include<string.h>
 
 main() {

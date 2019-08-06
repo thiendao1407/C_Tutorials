@@ -1,3 +1,4 @@
+// Quan li khach san
 #include<stdio.h>
 #include<string.h>
 

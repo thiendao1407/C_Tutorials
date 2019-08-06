@@ -1,7 +1,15 @@
+// Tim Max, Min
 #include<stdio.h>
 
-int max();
-int min();
+int max(int a[], int n);
+int min(int a[], int n);
+// Ham xoa bo nho dem
+void xoabonhodem();
+void xoabonhodem() {
+  while(true)
+    if(getchar()=='\n')
+        break;
+}
 int max(int a[], int n)
 {
   int i, max;
@@ -28,10 +36,12 @@ main()
   do {
     printf("Nhap vao n<=50: ");
     scanf("%d", & n);
+    xoabonhodem();
   } while (n <= 0 || n > 50);
   for (i = 0; i < n; i++) {
     printf("Nhap vao so thu %d: ", i + 1);
     scanf("%d", & a[i]);
+    xoabonhodem();
   }
   imax = max(a, n);
   imin = min(a, n);

@@ -1,3 +1,4 @@
+// Quan li khach san
 #include<stdio.h>
 #include<string.h>
 
@@ -75,8 +76,7 @@ void timphong(int s[]) {
       s[k - 1] = 0;
     }
   }
-  if (s[k - 1] == 0)
-    printf("Phong %d da duoc thue, moi ban chuyen den muc 3", k);
+  else printf("Phong %d da duoc thue, moi ban chuyen den muc 3", k);
   printf("\n\n");
 }
 void traphong(int s[]) {
@@ -87,7 +87,7 @@ void traphong(int s[]) {
   } while (k < 1 || k > l);
   if (s[k - 1] == 1)
     printf("Phong %d chua duoc thue, moi ban chuyen den muc 4", k);
-  if (s[k - 1] == 0) {
+  else {
     printf("Ban co muon tra phong %d?\n", k);
     do {
       printf("1. Yes of 2. No?\n");

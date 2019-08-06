@@ -1,3 +1,4 @@
+// Xoa mot so ki tu tu vi tri xac dinh
 #include<stdio.h>
 #include<string.h>
 

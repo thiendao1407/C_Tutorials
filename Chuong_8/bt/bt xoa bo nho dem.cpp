@@ -1,3 +1,4 @@
+// Xoa bo nho dem
 #include<stdio.h>
 
 // Ham xoa bo nho dem

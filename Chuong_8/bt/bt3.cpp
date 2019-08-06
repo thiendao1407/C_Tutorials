@@ -1,9 +1,10 @@
+// Tach ten va ten lot
 #include<stdio.h>
 #include<string.h>
 
  // Ham tach ki tu
-int tachkitu(char s[]);
-int tachkitu(char s[]) {
+void tachkitu(char s[]);
+void tachkitu(char s[]) {
   // cat ki tu lap nhau
   int i, j;
   for (i = 0; i < strlen(s) - 1; i++)
@@ -24,8 +25,8 @@ int tachkitu(char s[]) {
     s[strlen(s) - 1] = '\0';
 }
 // Ham tach ten
-int hoten(char s[]);
-int hoten(char s[]) {
+void hoten(char s[]);
+void hoten(char s[]) {
   for (int k = strlen(s) - 1; k >= 0; k--)
     if (s[k] == ' ') {
       printf("Ten la: %s\n", s + k + 1);

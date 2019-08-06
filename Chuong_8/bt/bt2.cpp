@@ -1,7 +1,8 @@
+// Sap xep tang dan, giam dan
 #include<stdio.h>
 
-int tang();
-int giam();
+int tang(int a[], int n);
+int giam(int a[], int n);
 
 //ham tang
 int tang(int a[], int n)

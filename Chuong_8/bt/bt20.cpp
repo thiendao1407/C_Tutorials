@@ -1,3 +1,4 @@
+// Xac dinh vi tri bat dau cua chuoi con trong chuoi ban dau
 #include<stdio.h>
 #include<string.h>
 

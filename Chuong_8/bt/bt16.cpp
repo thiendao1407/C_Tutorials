@@ -1,3 +1,4 @@
+// Dem so ki tu tinh tien
 #include<stdio.h>
 #include<string.h>
 
@@ -8,7 +9,7 @@ main() {
   do {
     printf("Nhap vao van ban cua ban( ngan hon 50 ki tu)\n");
     gets(s);
-  } while (strlen(s) > 50);
+  } while (strlen(*s) > 50);
   //lay gia tri k
   for (i = 0; i < strlen(s); i++)
     if (s[i] != ' ') {

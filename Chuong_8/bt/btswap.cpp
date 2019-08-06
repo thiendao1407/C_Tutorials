@@ -1,12 +1,7 @@
+// Swap
 #include<stdio.h>
 
 int swap(int &,int &);
-int swap(int & a, int & b) {
-  int k;
-  k = a;
-  a = b;
-  b = k;
-}
 
 main() {
   int a, b;
@@ -17,4 +12,10 @@ main() {
   swap(a, b);
   printf("so a la: %d\n", a);
   printf("so b la: %d\n", b);
+}
+int swap(int & a, int & b) {
+  int k;
+  k = a;
+  a = b;
+  b = k;
 }
