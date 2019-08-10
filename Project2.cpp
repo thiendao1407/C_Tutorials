@@ -41,6 +41,13 @@ void sua (thongtinsinhvien sv[], int sinhvienhientai);
 void xoa (thongtinsinhvien sv[], int &sinhvienhientai);
 
 void ngaysinh (thongtinsinhvien sv[], int sinhvienhientai);
+void ten (thongtinsinhvien sv[], int sinhvienhientai);
+void sdt (thongtinsinhvien sv[], int sinhvienhientai);
+void quequan (thongtinsinhvien sv[], int sinhvienhientai);
+
+void diemtoan (thongtinsinhvien sv[], int sinhvienhientai);
+void diemanh (thongtinsinhvien sv[], int sinhvienhientai);
+void diemvan (thongtinsinhvien sv[], int sinhvienhientai);
 
 main() {
     thongtinsinhvien sv[MAX];
@@ -126,53 +133,6 @@ main() {
 }
 
 
-// Ham ngay sinh
-void ngaysinh (thongtinsinhvien sv[], int sinhvienhientai){
-    int kiemtranamnhuan;
-    printf("\nNhap vao ngay thang nam sinh");
-    printf("\nNhap nam:");
-	gets (ctemp);
-	sv[sinhvienhientai].ngaysinh.nam=atoi(ctemp);
-	kiemtranamnhuan = sv[sinhvienhientai].ngaysinh.nam % 4;
-	do {
-        printf("Nhap thang:");
-        gets (ctemp);
-        sv[sinhvienhientai].ngaysinh.thang=atoi(ctemp);
-	} while (sv[sinhvienhientai].ngaysinh.thang==0 || sv[sinhvienhientai].ngaysinh.thang >12);
-	switch(sv[sinhvienhientai].ngaysinh.thang){
-		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-		    do {
-                printf("Nhap ngay:");
-                gets (ctemp);
-                sv[sinhvienhientai].ngaysinh.ngay=atoi(ctemp);
-            } while (sv[sinhvienhientai].ngaysinh.ngay==0 || sv[sinhvienhientai].ngaysinh.thang >31);
-            break;
-		case 4: case 6: case 9: case 11:
-            do {
-                printf("Nhap ngay:");
-                gets (ctemp);
-                sv[sinhvienhientai].ngaysinh.ngay=atoi(ctemp);
-            } while (sv[sinhvienhientai].ngaysinh.ngay==0 || sv[sinhvienhientai].ngaysinh.thang >30);
-            break;
-		case 2: switch(kiemtranamnhuan){
-			case 0:
-			    do {
-                    printf("Nhap ngay:");
-                    gets (ctemp);
-                    sv[sinhvienhientai].ngaysinh.ngay=atoi(ctemp);
-                } while (sv[sinhvienhientai].ngaysinh.ngay==0 || sv[sinhvienhientai].ngaysinh.thang >29);
-                break;
-			case 1: case 2: case 3:
-			    do {
-                    printf("Nhap ngay:");
-                    gets (ctemp);
-                    sv[sinhvienhientai].ngaysinh.ngay=atoi(ctemp);
-                } while (sv[sinhvienhientai].ngaysinh.ngay==0 || sv[sinhvienhientai].ngaysinh.thang >28);
-                break;
-            }
-        }
-}
-
 
 void timkiembangten (thongtinsinhvien sv[], int sinhvienhientai){
     int i, kiemtra = 0;
@@ -225,6 +185,8 @@ void sapxeptheomontoan (thongtinsinhvien sv[], int sinhvienhientai) {
     }
 }
 
+
+
 void sapxeptheomonanh (thongtinsinhvien sv[], int sinhvienhientai) {
     int i, j;
     thongtinsinhvien temp;
@@ -270,62 +232,49 @@ void sapxeptheomonvan (thongtinsinhvien sv[], int sinhvienhientai) {
 }
 
 
-void them (thongtinsinhvien sv[], int &sinhvienhientai) {
-    int yesno=0, kiemtra = 0;
-    while (sinhvienhientai < MAX && yesno != 2) {
-        printf("\nSinh vien hien tai la: %d", sinhvienhientai);
-        printf("\nNhap vao sinh vien thu %d", sinhvienhientai + 1);
-        // Nhap ma sinh vien
-        printf("\nMa sinh vien: ");
-            gets(sv[sinhvienhientai].masinhvien);
-        if (strlen(sv[sinhvienhientai].masinhvien)==0){
-            printf("Ma sinh vien khong hop le");
-            break;
-        }
-        for (int k=0;k<sinhvienhientai;k++){
-            if(strcmpi(sv[sinhvienhientai].masinhvien,sv[k].masinhvien)==0){
-                    kiemtra=1;
-                    break;
-            }
-        }
-        if (kiemtra==1){
-            printf("Ma sinh vien da ton tai");
-            break;
-        }
-        // Nhap ten
-        do {
-            printf("\nTen: ");
-            gets(sv[sinhvienhientai].ten);
-        } while (strlen(sv[sinhvienhientai].ten)==0);
-        // Nhap ngay sinh
-        ngaysinh(sv,sinhvienhientai);
-        // Nhap so dien thoai
-        do {
-            printf("\nSo dien thoai: (+84)");
-            gets(ctemp);
-            sv[sinhvienhientai].sdt = atoi(ctemp);
-        } while (sv[sinhvienhientai].sdt == 0);
-        //Nhap que quan
-        printf("\nQue: ");
-        gets(sv[sinhvienhientai].quequan);
-        // Nhap diem
-        printf("\nDiem Toan: ");
-        gets(ctemp);
-        sv[sinhvienhientai].diem.toan=atoi(ctemp);
-        printf("\nDiem Anh: ");
-        gets(ctemp);
-        sv[sinhvienhientai].diem.anh=atoi(ctemp);
-        printf("\nDiem Van: ");
-        gets(ctemp);
-        sv[sinhvienhientai].diem.van=atoi(ctemp);
-        // Yes/No
-        do {
-            printf("Ban co muon tiep tuc?\n1.Yes 2.No\n");
-            gets(ctemp);
-            yesno = atoi(ctemp);
-        } while (yesno!=1 && yesno!=2);
-        sinhvienhientai++;
+
+void them(thongtinsinhvien sv[], int & sinhvienhientai) {
+  int yesno = 0, kiemtra = 0;
+  while (sinhvienhientai < MAX && yesno != 2) {
+    printf("\nSinh vien hien tai la: %d", sinhvienhientai);
+    printf("\nNhap vao sinh vien thu %d", sinhvienhientai + 1);
+    // Nhap ma sinh vien
+    printf("\nMa sinh vien: ");
+    gets(sv[sinhvienhientai].masinhvien);
+    if (strlen(sv[sinhvienhientai].masinhvien) == 0) {
+      printf("Ma sinh vien khong hop le");
+      break;
+    }
+    for (int k = 0; k < sinhvienhientai; k++) {
+      if (strcmpi(sv[sinhvienhientai].masinhvien, sv[k].masinhvien) == 0) {
+        kiemtra = 1;
+        break;
+      }
+    }
+    if (kiemtra == 1) {
+      printf("Ma sinh vien da ton tai");
+      break;
     };
+    // Nhap ten
+    ten(sv, sinhvienhientai);
+    // Nhap ngay sinh
+    ngaysinh(sv, sinhvienhientai);
+    // Nhap so dien thoai
+    sdt(sv, sinhvienhientai);
+    //Nhap que quan
+    quequan(sv, sinhvienhientai);
+    // Nhap diem
+    diemtoan(sv, sinhvienhientai);
+    diemanh(sv, sinhvienhientai);
+    diemvan(sv, sinhvienhientai);
+    // Yes/No
+    do {
+      printf("Ban co muon tiep tuc?\n1.Yes 2.No\n");
+      gets(ctemp);
+      yesno = atoi(ctemp);
+    } while (yesno != 1 && yesno != 2);
+    sinhvienhientai++;
+  };
 }
 
 void sua (thongtinsinhvien sv[], int sinhvienhientai) {
@@ -354,26 +303,17 @@ void sua (thongtinsinhvien sv[], int sinhvienhientai) {
             luachoncuaban = atoi(ctemp);
             switch (luachoncuaban){
                 case 1:
-                    do {
-                        printf("\nTen: ");
-                        gets(sv[vitri].ten);
-                    } while (strlen(sv[vitri].ten)==0);
-                    printf("Thay doi thanh cong!");
+                    ten(sv,vitri);
                     break;
                 case 2:
                     ngaysinh(sv,vitri);
                     printf("Thay doi thanh cong!");
                 case 3:
-                    do {
-                        printf("\nSo dien thoai: (+84)");
-                        gets(ctemp);
-                        sv[vitri].sdt = atoi(ctemp);
-                    } while (sv[vitri].sdt == 0);
+                    sdt(sv,vitri);
                     printf("Thay doi thanh cong!");
                     break;
                 case 4:
-                    printf("\nQue: ");
-                    gets(sv[vitri].quequan);
+                    quequan(sv,vitri);
                     printf("Thay doi thanh cong!");
                     break;
                 case 5:
@@ -385,21 +325,15 @@ void sua (thongtinsinhvien sv[], int sinhvienhientai) {
                         luachoncuaban = atoi(ctemp);
                         switch (luachoncuaban){
                             case 1:
-                                printf("\nDiem Toan: ");
-                                gets(ctemp);
-                                sv[vitri].diem.toan = atoi(ctemp);
+                                diemtoan(sv,vitri);
                                 printf("Thay doi thanh cong!");
                                 break;
                             case 2:
-                                printf("\nDiem Anh: ");
-                                gets(ctemp);
-                                sv[vitri].diem.anh = atoi(ctemp);
+                                diemanh(sv,vitri);
                                 printf("Thay doi thanh cong!");
                                 break;
                             case 3:
-                                printf("\nDiem Van: ");
-                                gets(ctemp);
-                                sv[vitri].diem.van = atoi(ctemp);
+                                diemvan(sv,vitri);
                                 printf("Thay doi thanh cong!");
                                 break;
                         }
@@ -441,6 +375,88 @@ void xoa (thongtinsinhvien sv[], int &sinhvienhientai) {
             sinhvienhientai--;
         }
     }
+}
+
+
+void ten(thongtinsinhvien sv[], int sinhvienhientai) {
+  do {
+    printf("\nTen: ");
+    gets(sv[sinhvienhientai].ten);
+  } while (strlen(sv[sinhvienhientai].ten) == 0);
+}
+void ngaysinh (thongtinsinhvien sv[], int sinhvienhientai){
+    int kiemtranamnhuan;
+    printf("\nNhap vao ngay thang nam sinh");
+    printf("\nNhap nam:");
+	gets (ctemp);
+	sv[sinhvienhientai].ngaysinh.nam=atoi(ctemp);
+	kiemtranamnhuan = sv[sinhvienhientai].ngaysinh.nam % 4;
+	do {
+        printf("Nhap thang:");
+        gets (ctemp);
+        sv[sinhvienhientai].ngaysinh.thang=atoi(ctemp);
+	} while (sv[sinhvienhientai].ngaysinh.thang==0 || sv[sinhvienhientai].ngaysinh.thang >12);
+	switch(sv[sinhvienhientai].ngaysinh.thang){
+		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+		    do {
+                printf("Nhap ngay:");
+                gets (ctemp);
+                sv[sinhvienhientai].ngaysinh.ngay=atoi(ctemp);
+            } while (sv[sinhvienhientai].ngaysinh.ngay==0 || sv[sinhvienhientai].ngaysinh.thang >31);
+            break;
+		case 4: case 6: case 9: case 11:
+            do {
+                printf("Nhap ngay:");
+                gets (ctemp);
+                sv[sinhvienhientai].ngaysinh.ngay=atoi(ctemp);
+            } while (sv[sinhvienhientai].ngaysinh.ngay==0 || sv[sinhvienhientai].ngaysinh.thang >30);
+            break;
+		case 2: switch(kiemtranamnhuan){
+			case 0:
+			    do {
+                    printf("Nhap ngay:");
+                    gets (ctemp);
+                    sv[sinhvienhientai].ngaysinh.ngay=atoi(ctemp);
+                } while (sv[sinhvienhientai].ngaysinh.ngay==0 || sv[sinhvienhientai].ngaysinh.thang >29);
+                break;
+			case 1: case 2: case 3:
+			    do {
+                    printf("Nhap ngay:");
+                    gets (ctemp);
+                    sv[sinhvienhientai].ngaysinh.ngay=atoi(ctemp);
+                } while (sv[sinhvienhientai].ngaysinh.ngay==0 || sv[sinhvienhientai].ngaysinh.thang >28);
+                break;
+            }
+        }
+}
+
+void sdt(thongtinsinhvien sv[], int sinhvienhientai) {
+  do {
+    printf("\nSo dien thoai: (+84)");
+    gets(ctemp);
+    sv[sinhvienhientai].sdt = atoi(ctemp);
+  } while (sv[sinhvienhientai].sdt == 0);
+}
+
+void quequan(thongtinsinhvien sv[], int sinhvienhientai) {
+  printf("\nQue: ");
+  gets(sv[sinhvienhientai].quequan);
+}
+
+void diemtoan(thongtinsinhvien sv[], int sinhvienhientai) {
+  printf("\nDiem Toan: ");
+  gets(ctemp);
+  sv[sinhvienhientai].diem.toan = atoi(ctemp);
+}
+void diemanh(thongtinsinhvien sv[], int sinhvienhientai) {
+  printf("\nDiem Anh: ");
+  gets(ctemp);
+  sv[sinhvienhientai].diem.anh = atoi(ctemp);
+}
+void diemvan(thongtinsinhvien sv[], int sinhvienhientai) {
+  printf("\nDiem Van: ");
+  gets(ctemp);
+  sv[sinhvienhientai].diem.van = atoi(ctemp);
 }
 
 
