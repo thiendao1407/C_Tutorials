@@ -6,7 +6,7 @@
 #define MAX 50
 
 
-int sinhvienhientai = 0, luachoncuaban;
+int luachoncuaban;
 char ctemp[15];
 
 typedef struct Monhoc {

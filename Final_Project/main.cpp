@@ -2,10 +2,11 @@
 
 main() {
 
+    int sinhvienhientai = 0;
     thongtinsinhvien sv[MAX];
     FILE *f;
     docfile(f, sv, sinhvienhientai);
-    do {
+    while (luachoncuaban != 6) {
         printf("\n----------------------------");
         printf("\n1. Tim kiem\n\n2. Sap xep\n\n3. Them sinh vien\n\n4. Sua sinh vien\n\n5. Xoa sinh vien\n\n6. Thoat\n");
         printf("----------------------------\n");
@@ -33,9 +34,8 @@ main() {
             xoa(sv, sinhvienhientai);
             luachoncuaban = 0;
             break;
-        }
-    }
-    while (luachoncuaban != 6);
+        } // end switch
+    } // end while
     luachoncuaban = 0;
     ghifile(f, sv, sinhvienhientai);
 }
@@ -314,7 +314,7 @@ void xoa(thongtinsinhvien sv[], int &sinhvienhientai) {
     if (sinhvienhientai==0)
         printf ("\nDanh sach rong!");
     else {
-            // Kiem tra ma sinh vien
+        // Kiem tra ma sinh vien
         char msv[15];
         int kiemtra=0, vitri;
         printf("\nNhap ma sinh vien cua sinh vien can xoa thong tin: ");
@@ -489,6 +489,16 @@ void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
                 printf("%s, %s, %d/%d/%d, %d, %s, %d, %d, %d\n", sv[icount].masinhvien, sv[icount].ten, sv[icount].ngaysinh.ngay, sv[icount].ngaysinh.thang, sv[icount].ngaysinh.nam, sv[icount].sdt, sv[icount].quequan, sv[icount].diem.toan, sv[icount].diem.anh, sv[icount].diem.van);
             printf("So sinh vien hien tai la: %d\n", sinhvienhientai);
         } //end if
+
+        // Kiem tra trung ma sinh vien
+        for (int i=0; i<sinhvienhientai-1; i++){
+            for (int j=i+1; j<sinhvienhientai; j++) {
+                if (strcmpi(sv[i].masinhvien,sv[j].masinhvien)==0) {
+                    printf("Trung ma sinh vien %s\n",sv[i].masinhvien);
+                    luachoncuaban = 6; // thoat vong lap while
+                } // end if
+            } // end for
+        } // end for
 
     } //end else
 
