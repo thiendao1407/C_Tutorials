@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
@@ -40,9 +41,9 @@ void sapxeptheomontoan(thongtinsinhvien sv[], int sinhvienhientai);
 void sapxeptheomonanh(thongtinsinhvien sv[], int sinhvienhientai);
 void sapxeptheomonvan(thongtinsinhvien sv[], int sinhvienhientai);
 
-void them(thongtinsinhvien sv[], int &sinhvienhientai);
+void them(thongtinsinhvien sv[], int *sinhvienhientai);
 void sua(thongtinsinhvien sv[], int sinhvienhientai);
-void xoa(thongtinsinhvien sv[], int &sinhvienhientai);
+void xoa(thongtinsinhvien sv[], int *sinhvienhientai);
 
 void ngaysinh(thongtinsinhvien sv[], int sinhvienhientai);
 void ten(thongtinsinhvien sv[], int sinhvienhientai);
@@ -56,6 +57,6 @@ void diemvan(thongtinsinhvien sv[], int sinhvienhientai);
 // ghi file
 void ghifile(FILE *f, thongtinsinhvien sv[], int sinhvienhientai);
 //doc file
-void docfile(FILE *f, thongtinsinhvien sv[], int &sinhvienhientai);
+void docfile(FILE *f, thongtinsinhvien sv[], int *sinhvienhientai);
 
 
