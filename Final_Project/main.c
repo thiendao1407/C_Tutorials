@@ -197,6 +197,7 @@ void sapxeptheomonvan(thongtinsinhvien sv[], int sinhvienhientai) {
 // Ham them thong tin
 void them(thongtinsinhvien sv[], int *sinhvienhientai) {
   int yesno = 0, kiemtra = 0;
+  // Kiem tra ma sinh vien
   for (;;) {
     printf("\nSinh vien hien tai la: %d", *sinhvienhientai);
     printf("\nNhap vao sinh vien thu %d", *sinhvienhientai + 1);
@@ -216,7 +217,7 @@ void them(thongtinsinhvien sv[], int *sinhvienhientai) {
     if (kiemtra == 1) {
       printf("\nMa sinh vien da ton tai!");
       break;
-    };
+    }
     // Nhap ten
     ten(sv, *sinhvienhientai);
     // Nhap ngay sinh
@@ -242,7 +243,7 @@ void them(thongtinsinhvien sv[], int *sinhvienhientai) {
     } // end if
   if (yesno == 2)
     break;
-  }
+  } // end for loop
 }
 
 // Ham sua thong tin
@@ -250,7 +251,7 @@ void sua(thongtinsinhvien sv[], int sinhvienhientai) {
     if (sinhvienhientai==0)
         printf("\nDanh sach rong!");
     else {
-        // Kiem tra ma sinh vien
+        // Kiem tra ma sinh vien co ton tai k
         char msv[15];
         int kiemtra=0, vitri;
         printf("\nNhap ma sinh vien cua sinh vien can sua thong tin: ");
@@ -275,23 +276,23 @@ void sua(thongtinsinhvien sv[], int sinhvienhientai) {
             gets(ctemp);
             luachoncuaban = atoi(ctemp);
             switch (luachoncuaban){
-                case 1:
+                case 1: // sua ten
                     ten(sv,vitri);
                     printf("\nThay doi thanh cong!");
                     break;
-                case 2:
+                case 2: // sua ngay sinh
                     ngaysinh(sv,vitri);
                     printf("\nThay doi thanh cong!");
                     break;
-                case 3:
+                case 3: // sua sdt
                     sdt(sv,vitri);
                     printf("\nThay doi thanh cong!");
                     break;
-                case 4:
+                case 4: // sua que quan
                     quequan(sv,vitri);
                     printf("\nThay doi thanh cong!");
                     break;
-                case 5:
+                case 5: // sua diem
                     do {
                         printf("\n----------------------------");
                         printf("\n1. Toan\n\n2. Anh\n\n3. Van\n\n4. Thoat\n");
@@ -300,15 +301,15 @@ void sua(thongtinsinhvien sv[], int sinhvienhientai) {
                         gets(ctemp);
                         luachoncuaban = atoi(ctemp);
                         switch (luachoncuaban){
-                            case 1:
+                            case 1: // sua diem toan
                                 diemtoan(sv,vitri);
                                 printf("\nThay doi thanh cong!");
                                 break;
-                            case 2:
+                            case 2: // sua diem anh
                                 diemanh(sv,vitri);
                                 printf("\nThay doi thanh cong!");
                                 break;
-                            case 3:
+                            case 3: // sua diem van
                                 diemvan(sv,vitri);
                                 printf("\nThay doi thanh cong!");
                                 break;
@@ -327,7 +328,7 @@ void xoa(thongtinsinhvien sv[], int *sinhvienhientai) {
     if (*sinhvienhientai==0)
         printf ("\nDanh sach rong!");
     else {
-        // Kiem tra ma sinh vien
+        // Kiem tra ma sinh vien co ton tai k
         char msv[15];
         int kiemtra=0, vitri;
         printf("\nNhap ma sinh vien cua sinh vien can xoa thong tin: ");
@@ -377,6 +378,7 @@ void ngaysinh(thongtinsinhvien sv[], int sinhvienhientai){
         gets (ctemp);
         sv[sinhvienhientai].ngaysinh.thang=atoi(ctemp);
 	} while (sv[sinhvienhientai].ngaysinh.thang==0 || sv[sinhvienhientai].ngaysinh.thang >12);
+
 	switch(sv[sinhvienhientai].ngaysinh.thang){
 		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
 		    do {
@@ -392,7 +394,7 @@ void ngaysinh(thongtinsinhvien sv[], int sinhvienhientai){
                 sv[sinhvienhientai].ngaysinh.ngay=atoi(ctemp);
             } while (sv[sinhvienhientai].ngaysinh.ngay==0 || sv[sinhvienhientai].ngaysinh.thang >30);
             break;
-		case 2: switch(kiemtranamnhuan){
+		case 2: switch(kiemtranamnhuan){ // Kiem tra nam nhuan thi thang 2 co 29 ngay
 			case 0:
 			    do {
                     printf("Nhap ngay:");
@@ -478,7 +480,7 @@ void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
         fseek(f, 0, 2);
         char s[ftell(f) + 1]; //tinh do dai chuoi s
         rewind(f); // dat pointer f ve dau file
-        fscanf(f, "%[^EOF]", s); // chep file vao string, bo qua EOF
+        fscanf(f, "%[^EOF]", s); // Bo qua EOF
 
         //Loai bo khoang trang thua va tinh sinhvienhientai
         if (strlen(s) > 1) {
