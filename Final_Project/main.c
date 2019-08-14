@@ -40,7 +40,7 @@ void main(void) {
     ghifile(f, sv, sinhvienhientai);
 }
 
-
+// Ham tim kiem
 void timkiem(thongtinsinhvien sv[], int sinhvienhientai){
     if (sinhvienhientai == 0)
         printf("\nDanh sach rong!");
@@ -63,6 +63,8 @@ void timkiem(thongtinsinhvien sv[], int sinhvienhientai){
         } while (luachoncuaban != 3);
     } // end else
 }
+
+// Ham con tim kiem theo ten
 void timkiembangten(thongtinsinhvien sv[], int sinhvienhientai){
     int i, kiemtra = 0;
     char ten[15];
@@ -77,6 +79,8 @@ void timkiembangten(thongtinsinhvien sv[], int sinhvienhientai){
     if (kiemtra==0)
         printf("\nKhong tim thay ten!");
 }
+
+// Ham con tim kiem theo sdt
 void timkiembangsodienthoai(thongtinsinhvien sv[], int sinhvienhientai) {
     int i, kiemtra = 0;
     int sdt;
@@ -93,6 +97,7 @@ void timkiembangsodienthoai(thongtinsinhvien sv[], int sinhvienhientai) {
         printf("\nKhong tim thay so dien thoai!");
 }
 
+// Ham sap xep
 void sapxep(thongtinsinhvien sv[], int sinhvienhientai) {
     if (sinhvienhientai == 0)
         printf("Danh sach rong!");
@@ -118,6 +123,8 @@ void sapxep(thongtinsinhvien sv[], int sinhvienhientai) {
         } while (luachoncuaban != 4);
     } // end else
 }
+
+// Ham con sap xep theo mon toan
 void sapxeptheomontoan(thongtinsinhvien sv[], int sinhvienhientai) {
     int i, j;
     thongtinsinhvien temp;
@@ -139,6 +146,8 @@ void sapxeptheomontoan(thongtinsinhvien sv[], int sinhvienhientai) {
             printf("\n%15s%15s%15d%10d%10d", sv[i].ten, sv[i].masinhvien, sv[i].diem.toan, sv[i].diem.anh, sv[i].diem.van);
     }
 }
+
+// Ham con sap xep theo mon anh
 void sapxeptheomonanh(thongtinsinhvien sv[], int sinhvienhientai) {
     int i, j;
     thongtinsinhvien temp;
@@ -160,6 +169,8 @@ void sapxeptheomonanh(thongtinsinhvien sv[], int sinhvienhientai) {
             printf("\n%15s%15s%15d%10d%10d", sv[i].ten, sv[i].masinhvien, sv[i].diem.toan, sv[i].diem.anh, sv[i].diem.van);
     }
 }
+
+// Ham con sap xep theo mon van
 void sapxeptheomonvan(thongtinsinhvien sv[], int sinhvienhientai) {
     int i, j;
     thongtinsinhvien temp;
@@ -183,7 +194,7 @@ void sapxeptheomonvan(thongtinsinhvien sv[], int sinhvienhientai) {
 }
 
 
-
+// Ham them thong tin
 void them(thongtinsinhvien sv[], int *sinhvienhientai) {
   int yesno = 0, kiemtra = 0;
   for (;;) {
@@ -234,6 +245,7 @@ void them(thongtinsinhvien sv[], int *sinhvienhientai) {
   }
 }
 
+// Ham sua thong tin
 void sua(thongtinsinhvien sv[], int sinhvienhientai) {
     if (sinhvienhientai==0)
         printf("\nDanh sach rong!");
@@ -310,6 +322,7 @@ void sua(thongtinsinhvien sv[], int sinhvienhientai) {
     }
 }
 
+// Ham xoa thong tin
 void xoa(thongtinsinhvien sv[], int *sinhvienhientai) {
     if (*sinhvienhientai==0)
         printf ("\nDanh sach rong!");
@@ -343,13 +356,15 @@ void xoa(thongtinsinhvien sv[], int *sinhvienhientai) {
     }
 }
 
-
+// Ham nhap ten
 void ten(thongtinsinhvien sv[], int sinhvienhientai) {
   do {
     printf("Ten: ");
     gets(sv[sinhvienhientai].ten);
   } while (strlen(sv[sinhvienhientai].ten) == 0);
 }
+
+// Ham nhap ngay sinh
 void ngaysinh(thongtinsinhvien sv[], int sinhvienhientai){
     int kiemtranamnhuan;
     printf("Nhap vao ngay thang nam sinh\n");
@@ -395,6 +410,8 @@ void ngaysinh(thongtinsinhvien sv[], int sinhvienhientai){
             }
         }
 }
+
+// Ham nhap sdt
 void sdt(thongtinsinhvien sv[], int sinhvienhientai) {
   do {
     printf("So dien thoai: (+84)");
@@ -402,28 +419,35 @@ void sdt(thongtinsinhvien sv[], int sinhvienhientai) {
     sv[sinhvienhientai].sdt = atoi(ctemp);
   } while (sv[sinhvienhientai].sdt == 0);
 }
+
+// Ham nhap que quan
 void quequan(thongtinsinhvien sv[], int sinhvienhientai) {
   printf("Que: ");
   gets(sv[sinhvienhientai].quequan);
 }
 
+// Ham nhap diem toan
 void diemtoan(thongtinsinhvien sv[], int sinhvienhientai) {
   printf("Diem Toan: ");
   gets(ctemp);
   sv[sinhvienhientai].diem.toan = atoi(ctemp);
 }
+
+//Ham nhap diem anh
 void diemanh(thongtinsinhvien sv[], int sinhvienhientai) {
   printf("Diem Anh: ");
   gets(ctemp);
   sv[sinhvienhientai].diem.anh = atoi(ctemp);
 }
+
+// Ham nhap diem van
 void diemvan(thongtinsinhvien sv[], int sinhvienhientai) {
   printf("Diem Van: ");
   gets(ctemp);
   sv[sinhvienhientai].diem.van = atoi(ctemp);
 }
 
-// ghi file
+// Ham ghi file
 void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
     if ((f = fopen("danhsachsinhvien.csv", "w")) == NULL) {
         printf("Khong the mo file!\n");
@@ -439,7 +463,7 @@ void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
 
     fclose(f);
 }
- // doc file
+ // Ham doc file
  void docfile(FILE * f, thongtinsinhvien sv[], int * sinhvienhientai) {
     char * tokenPtr;
     int icount;
