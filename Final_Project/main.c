@@ -5,7 +5,7 @@ void main(void) {
     int sinhvienhientai = 0;
     thongtinsinhvien sv[MAX];
     FILE *f;
-    docfile(f, sv, &sinhvienhientai);
+    docfile(f, sv, &sinhvienhientai, &luachoncuaban);
     while (luachoncuaban != 6) {
         printf("\n----------------------------");
         printf("\n1. Tim kiem\n\n2. Sap xep\n\n3. Them sinh vien\n\n4. Sua sinh vien\n\n5. Xoa sinh vien\n\n6. Thoat\n");
@@ -198,7 +198,7 @@ void sapxeptheomonvan(thongtinsinhvien sv[], int sinhvienhientai) {
 void them(thongtinsinhvien sv[], int *sinhvienhientai) {
   int yesno = 0, kiemtra = 0;
   // Kiem tra ma sinh vien
-  for (;;) {
+  while (1) {
     printf("\nSinh vien hien tai la: %d", *sinhvienhientai);
     printf("\nNhap vao sinh vien thu %d", *sinhvienhientai + 1);
     // Nhap ma sinh vien
@@ -243,7 +243,7 @@ void them(thongtinsinhvien sv[], int *sinhvienhientai) {
     } // end if
   if (yesno == 2)
     break;
-  } // end for loop
+  } // end ưhile loop
 }
 
 // Ham sua thong tin
@@ -466,7 +466,7 @@ void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
     fclose(f);
 }
  // Ham doc file
- void docfile(FILE * f, thongtinsinhvien sv[], int * sinhvienhientai) {
+ void docfile(FILE * f, thongtinsinhvien sv[], int * sinhvienhientai, int * luachoncuaban) {
     char * tokenPtr;
     int icount;
 
@@ -522,8 +522,8 @@ void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
         for (int i=0; i< *sinhvienhientai - 1; i++){
             for (int j=i+1; j< *sinhvienhientai; j++) {
                 if (strcmpi(sv[i].masinhvien,sv[j].masinhvien)==0) {
-                    printf("Trung ma sinh vien %s\n",sv[i].masinhvien);
-                    luachoncuaban = 6; // thoat vong lap while
+                    printf("Trung ma sinh vien %s giua dong %d va dong %d\n",sv[i].masinhvien, i+1, j+1);
+                    *luachoncuaban = 6; // thoat vong lap while
                 } // end if
             } // end for
         } // end for
