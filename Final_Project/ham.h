@@ -57,6 +57,6 @@ void diemvan(thongtinsinhvien sv[], int sinhvienhientai);
 // ghi file
 void ghifile(FILE *f, thongtinsinhvien sv[], int sinhvienhientai);
 //doc file
-void docfile(FILE *f, thongtinsinhvien sv[], int *sinhvienhientai, int *luachoncuaban);
+void docfile(FILE *f, thongtinsinhvien sv[], int *sinhvienhientai);
 
 

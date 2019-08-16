@@ -5,7 +5,7 @@ void main(void) {
     int sinhvienhientai = 0;
     thongtinsinhvien sv[MAX];
     FILE *f;
-    docfile(f, sv, &sinhvienhientai, &luachoncuaban);
+    docfile(f, sv, &sinhvienhientai);
     while (luachoncuaban != 6) {
         printf("\n----------------------------");
         printf("\n1. Tim kiem\n\n2. Sap xep\n\n3. Them sinh vien\n\n4. Sua sinh vien\n\n5. Xoa sinh vien\n\n6. Thoat\n");
@@ -466,9 +466,8 @@ void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
     fclose(f);
 }
  // Ham doc file
- void docfile(FILE * f, thongtinsinhvien sv[], int * sinhvienhientai, int * luachoncuaban) {
+ void docfile(FILE * f, thongtinsinhvien sv[], int * sinhvienhientai) {
     char * tokenPtr;
-    int icount;
 
     f = fopen("danhsachsinhvien.csv", "r");
     if (f == NULL) {
@@ -485,15 +484,15 @@ void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
         //Loai bo khoang trang thua va tinh sinhvienhientai
         if (strlen(s) > 1) {
             *sinhvienhientai = 1;
-            for (icount = 1; icount < strlen(s); icount++) {
-                if (s[icount] == ' ' && s[icount - 1] == ',')
-                    s[icount] = ',';
-                if (s[icount] == '\n')
+            for (int i = 1; i < strlen(s); i++) {
+                if (s[i] == ' ' && s[i - 1] == ',')
+                    s[i] = ',';
+                if (s[i] == '\n')
                     *sinhvienhientai = *sinhvienhientai + 1;
             } // end for
 
             // Doc du lieu vao bien
-            icount = 0; // dat lai gia tri icount
+            int icount = 0;
             tokenPtr = strtok(s, ",/\n"); // loai bo , / va \n
             while (tokenPtr != NULL) {
                 switch (icount % 10) {
@@ -513,8 +512,8 @@ void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
             } // end while
 
             // In ra danh sach
-            for (icount = 0; icount < *sinhvienhientai; icount++)
-                printf("%s, %s, %d/%d/%d, %d, %s, %d, %d, %d\n", sv[icount].masinhvien, sv[icount].ten, sv[icount].ngaysinh.ngay, sv[icount].ngaysinh.thang, sv[icount].ngaysinh.nam, sv[icount].sdt, sv[icount].quequan, sv[icount].diem.toan, sv[icount].diem.anh, sv[icount].diem.van);
+            for (int i = 0; i < *sinhvienhientai; i++)
+                printf("%s, %s, %d/%d/%d, %d, %s, %d, %d, %d\n", sv[i].masinhvien, sv[i].ten, sv[i].ngaysinh.ngay, sv[i].ngaysinh.thang, sv[i].ngaysinh.nam, sv[i].sdt, sv[i].quequan, sv[i].diem.toan, sv[i].diem.anh, sv[i].diem.van);
             printf("So sinh vien hien tai la: %d\n", *sinhvienhientai);
         } //end if
 
@@ -523,7 +522,7 @@ void ghifile(FILE * f, thongtinsinhvien sv[], int sinhvienhientai) {
             for (int j=i+1; j< *sinhvienhientai; j++) {
                 if (strcmpi(sv[i].masinhvien,sv[j].masinhvien)==0) {
                     printf("Trung ma sinh vien %s giua dong %d va dong %d\n",sv[i].masinhvien, i+1, j+1);
-                    *luachoncuaban = 6; // thoat vong lap while
+                    luachoncuaban = 6; // thoat vong lap while
                 } // end if
             } // end for
         } // end for
