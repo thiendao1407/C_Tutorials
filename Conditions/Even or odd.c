@@ -7,7 +7,9 @@ int main() {
     if (x > 0)
         if (x % 2 == 0)
             printf("Even");
-        else printf("Odd");
-    else printf("Please enter a positive integer");
+        else
+            printf("Odd");
+    else
+        printf("Please enter a positive integer");
     return 0;
 }

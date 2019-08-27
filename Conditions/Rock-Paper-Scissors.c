@@ -10,58 +10,58 @@ int main() {
     switch (i) {
 
     case 1:
-        printf("Player 2 chooses:");
+        printf("Player 2 chooses: ");
         scanf("%d", & j);
         switch (j) {
         case 1:
             printf("Draw");
             break;
         case 2:
-            printf("Player 1 wins");
+            printf("Player 1 wins\n");
             break;
         case 3:
-            printf("Player 2 wins");
+            printf("Player 2 wins\n");
             break;
         default:
-            printf("You must enter 1, 2 or 3");
+            printf("You must enter 1, 2 or 3\n");
         };
         break;
     case 2:
-        printf("Player 2 chooses:");
+        printf("Player 2 chooses: ");
         scanf("%d", & j);
         switch (j) {
         case 1:
-            printf("Player 2 wins");
+            printf("Player 2 wins\n");
             break;
         case 2:
-            printf("Draw");
+            printf("Draw\n");
             break;
         case 3:
-            printf("Player 1 wins");
+            printf("Player 1 wins\n");
             break;
         default:
-            printf("You must enter 1, 2 or 3");
+            printf("You must enter 1, 2 or 3\n");
         };
         break;
     case 3:
-        printf("Player 2 chooses:");
+        printf("Player 2 chooses: ");
         scanf("%d", & j);
         switch (j) {
         case 1:
-            printf("Player 1 wins");
+            printf("Player 1 wins\n");
             break;
         case 2:
-            printf("Player 2 wins");
+            printf("Player 2 wins\n");
             break;
         case 3:
-            printf("Draw");
+            printf("Draw\n");
             break;
         default:
-            printf("You must enter 1, 2 or 3");
+            printf("You must enter 1, 2 or 3\n");
         };
         break;
     default:
-        printf("You must enter 1, 2 or 3");
+        printf("You must enter 1, 2 or 3\n");
     }
     return 0;
 }

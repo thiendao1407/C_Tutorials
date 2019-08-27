@@ -8,11 +8,15 @@ int main() {
     scanf("%d", & b);
     printf("Enter number c: ");
     scanf("%d", & c);
+
     imax = a;
-    if (b > imax)
-        imax = b;
-    if (c > imax)
+
+    if (b > a)
+        if (b > c)
+            imax = b;
+        else imax = c;
+    else if (c > a)
         imax = c;
-    printf("Max = %d", imax);
+    printf("The largest is %d", imax);
     return 0;
 }

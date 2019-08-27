@@ -8,6 +8,7 @@ int main() {
     scanf("%d", & b);
     if (a > b)
         printf("The greater number is: %d", a);
-    else printf("The greater number is: %d", b);
+    else
+        printf("The greater number is: %d", b);
     return 1;
 }
