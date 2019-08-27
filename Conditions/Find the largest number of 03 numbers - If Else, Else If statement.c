@@ -2,11 +2,11 @@
 
 int main() {
     int a, b, c, imax;
-    printf("nhap a: ");
+    printf("Enter number a: ");
     scanf("%d", & a);
-    printf("nhap b: ");
+    printf("Enter number b: ");
     scanf("%d", & b);
-    printf("nhap c: ");
+    printf("Enter number c: ");
     scanf("%d", & c);
 
     imax = a;
@@ -17,6 +17,6 @@ int main() {
         else imax = c;
     else if (c > a)
         imax = c;
-    printf("max = %d", imax);
+    printf("Max = %d", imax);
     return 0;
 }

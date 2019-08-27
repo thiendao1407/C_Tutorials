@@ -2,17 +2,17 @@
 
 int main() {
     int a, b, c, imax;
-    printf("nhap a: ");
+    printf("Enter number a: ");
     scanf("%d", & a);
-    printf("nhap b: ");
+    printf("Enter number b: ");
     scanf("%d", & b);
-    printf("nhap c: ");
+    printf("Enter number c: ");
     scanf("%d", & c);
     imax = a;
     if (b > imax)
         imax = b;
     if (c > imax)
         imax = c;
-    printf("max = %d", imax);
+    printf("Max = %d", imax);
     return 0;
 }

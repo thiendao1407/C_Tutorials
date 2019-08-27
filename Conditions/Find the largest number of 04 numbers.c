@@ -2,8 +2,8 @@
 
 int main() {
     int a, b, c, d, i1, i2;
-    printf("nhap a,b,c,d:");
-    scanf("%d,%d,%d,%d", & a, & b, & c, & d);
+    printf("Enter number a, b, c and d:");
+    scanf("%d,%d,%d,%d", &a, &b, &c, &d);
     i1 = a;
     i2 = c;
     if (b > a)
@@ -11,8 +11,8 @@ int main() {
     if (d > c)
         i2 = d;
     if (i1 > i2)
-        printf("so lon nhat la: %d.", i1);
+        printf("The largest number is: %d.", i1);
     else
-        printf("so lon nhat la: %d.", i2);
+        printf("The largest number is: %d.", i2);
     return 0;
 }

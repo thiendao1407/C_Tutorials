@@ -2,7 +2,7 @@
 
 int main(){
     char color;
-    printf("nhap vao mot ki tu: ");
+    printf("Please enter a character: ");
     scanf("%c", &color);
     switch(color){
         case 'R': case'r': printf("RED"); break;
