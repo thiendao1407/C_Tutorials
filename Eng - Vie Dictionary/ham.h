@@ -11,11 +11,10 @@ typedef struct Word {
     struct Word * next;
 } vocabulary;
 
-void add();
-void find_data();
-void update();
-void remove_data();
-void print_list();
-void export_list ();
-void import_file();
-
+vocabulary * add(vocabulary *head);
+void find_data(vocabulary *head);
+void update(vocabulary *head);
+vocabulary * remove_data(vocabulary *head);
+void print_list(vocabulary *head);
+void export_list(vocabulary *head);
+vocabulary * import_file(vocabulary *head);

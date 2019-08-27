@@ -1,0 +1,14 @@
+﻿Bài tập: Viết chương trình từ điển Anh-Việt, cho phép người dùng thêm từ, tìm từ, sửa từ, xóa từ, in ra tất cả các từ. Có thể thêm vô hạn từ.
+ 
+// Đây là struct của 1 từ trong từ điển. Thay vì lưu ở mảng char[50] ta sẽ lưu dạng con trỏ char*. Dùng malloc (hoặc calloc) để cấp phát bộ nhớ
+ 
+typedef struct Word
+{
+   char* name;          // Tên tiếng anh của từ
+   char* meaning;       // Nghĩa tiếng Việt
+   word* next;          // Con trỏ trỏ tới từ tiếp theo trong danh sách
+} word;
+ 
+Yêu cầu, dùng danh sách liên kết (đơn hoặc đôi) để lưu danh sách các từ trong từ điển.
+Không được thêm từ đã có sẵn
+Khi in từ có thể phân trang các từ. Mỗi page gồm 10 từ và cho phép next, prev page

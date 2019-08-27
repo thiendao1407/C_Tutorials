@@ -1,11 +1,9 @@
 #include "ham.h"
 
-void main(void) {
-
+int main() {
     int sinhvienhientai = 0;
     thongtinsinhvien sv[MAX];
-    FILE *f;
-    docfile(f, sv, &sinhvienhientai);
+    sinhvienhientai = docfile(sv, sinhvienhientai);
     while (luachoncuaban != 6) {
         printf("\n----------------------------");
         printf("\n1. Tim kiem\n\n2. Sap xep\n\n3. Them sinh vien\n\n4. Sua sinh vien\n\n5. Xoa sinh vien\n\n6. Thoat\n");
@@ -23,7 +21,7 @@ void main(void) {
             luachoncuaban = 0;
             break;
         case 3:
-            them(sv, &sinhvienhientai);
+            sinhvienhientai = them(sv, sinhvienhientai);
             luachoncuaban = 0;
             break;
         case 4:
@@ -31,11 +29,11 @@ void main(void) {
             luachoncuaban = 0;
             break;
         case 5:
-            xoa(sv, &sinhvienhientai);
+            sinhvienhientai = xoa(sv, sinhvienhientai);
             luachoncuaban = 0;
             break;
         } // end switch
     } // end while
     luachoncuaban = 0;
-    ghifile(f, sv, sinhvienhientai);
+    ghifile(sv, sinhvienhientai);
 }

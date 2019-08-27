@@ -2,8 +2,8 @@
 
 int main() {
     int yourchoice = 0;
-
-    import_file();
+    vocabulary * head = NULL;
+    head = import_file(head);
     while (yourchoice != 6) {
         printf("\n----------------------------");
         printf("\n1. Add\n\n2. Find\n\n3. Update\n\n4. Remove\n\n5. Print\n\n6. Exit\n");
@@ -13,28 +13,28 @@ int main() {
         yourchoice = atoi(ctemp);
         switch (yourchoice) {
         case 1:
-            add();
+            head = add(head);
             yourchoice = 0;
             break;
         case 2:
-            find_data();
+            find_data(head);
             yourchoice = 0;
             break;
         case 3:
-            update();
+            update(head);
             yourchoice = 0;
             break;
         case 4:
-            remove_data();
+            head = remove_data(head);
             yourchoice = 0;
             break;
         case 5:
-            print_list();
+            print_list(head);
             yourchoice = 0;
             break;
         } // end switch
     } // end while
     yourchoice = 0;
-    export_list();
+    export_list(head);
     return 0;
 }
