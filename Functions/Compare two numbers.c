@@ -3,12 +3,13 @@
 int a, b;
 int max();
 
-void main(void) {
-    printf("nhap so a: ");
+int main() {
+    printf("Please enter the number a: ");
     scanf("%d", & a);
-    printf("nhap so b: ");
+    printf("Please enter the number b: ");
     scanf("%d", & b);
-    printf("So lon nhat la: %d", max());
+    printf("The greater is: %d", max());
+    return 0;
 }
 
 int max() {

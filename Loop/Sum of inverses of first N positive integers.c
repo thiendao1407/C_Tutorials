@@ -9,6 +9,6 @@ int main() {
     isum = 0;
     while (i++ < in)
         isum = isum + 1.0/i;
-    printf("Sum of inverses of first %d natural numbers: %f\n", in, isum);
+    printf("Sum of inverses of first %d positive integers: %f\n", in, isum);
     return 0;
 }

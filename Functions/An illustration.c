@@ -1,11 +1,9 @@
 #include <stdio.h>
 
-#include <conio.h>
-
-// khai bao prototype
+// Prototype declaration
 void line();
 
-// ham in 1 dong dau
+// Prints a line with *
 void line() {
     int i;
     for (i = 0; i < 19; i++)
@@ -13,9 +11,9 @@ void line() {
     printf("\n");
 }
 
-void main(void) {
+int main() {
     line();
-    printf("* Minh hoa ve ham *\n");
+    printf("* An illustration *\n");
     line();
-    getch();
+    return 0;
 }
