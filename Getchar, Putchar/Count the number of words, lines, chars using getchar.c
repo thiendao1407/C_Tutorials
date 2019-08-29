@@ -1,9 +1,9 @@
 #include <stdio.h>
-#define IN 1 /* ben trong 1 tu */
-#define OUT 0 /* ben ngoai 1 tu */
+#define IN 1
+#define OUT 0
 int main()
 {
-    int c, nline, nword, nchar, state;
+    int c, nline, nword, nchar, state;  // Ctrl + Z to exit
     state = OUT;
     nline = nword = nchar = 0;
     while ((c = getchar()) != EOF) {
