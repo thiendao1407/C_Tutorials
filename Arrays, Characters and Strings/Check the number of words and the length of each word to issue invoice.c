@@ -12,7 +12,7 @@ int main() {
     do {
         printf("Please enter your telegram\n");
         gets(s);
-    } while (strlen(s) > MAX);
+    } while (strlen(s) >= MAX);
 
     remove_extra_spaces(s);
     number_of_words(s, &word1, &word2);

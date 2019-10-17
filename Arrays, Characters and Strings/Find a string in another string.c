@@ -10,12 +10,12 @@ int main() {
     do {
         printf("Enter the string s: ");
         gets(s);
-    } while (strlen(s) > 50);
+    } while (strlen(s) >= MAX);
 
     do {
         printf("Enter the string t: ");
         gets(t);
-    } while (strlen(t) > 50);
+    } while (strlen(t) >= MAX);
 
     search_for_the_first_occurrence(s,t);
     return 0;

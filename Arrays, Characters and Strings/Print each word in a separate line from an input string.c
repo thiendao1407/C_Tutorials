@@ -8,7 +8,7 @@ int main() {
     do {
         printf("Please enter a string: ");
         gets(s);
-    } while (strlen(s) > MAX);
+    } while (strlen(s) >= MAX);
 
     for (int i = 0; i < strlen(s); i++)
         if (s[i] == ' ')
