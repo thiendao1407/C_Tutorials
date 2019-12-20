@@ -1,39 +1,39 @@
-#include "ham.h"
+#include "functions.h"
 
 int main() {
-    int sinhvienhientai = 0;
-    thongtinsinhvien sv[MAX];
-    sinhvienhientai = docfile(sv, sinhvienhientai);
-    while (luachoncuaban != 6) {
+    int currentNumberOfStudent = 0;
+    studentInformation student[MAX];
+    currentNumberOfStudent = readFromFile(student, currentNumberOfStudent);
+    while (yourChoice != 6) {
         printf("\n----------------------------");
-        printf("\n1. Tim kiem\n\n2. Sap xep\n\n3. Them sinh vien\n\n4. Sua sinh vien\n\n5. Xoa sinh vien\n\n6. Thoat\n");
+        printf("\n1. Search\n\n2. Sort\n\n3. Add\n\n4. Modify\n\n5. Delete\n\n6. Exit\n");
         printf("----------------------------\n");
-        printf("\nMoi ban chon chuc nang: ");
+        printf("\nPlease choose: ");
         gets(ctemp);
-        luachoncuaban = atoi(ctemp);
-        switch (luachoncuaban) {
+        yourChoice = atoi(ctemp);
+        switch (yourChoice) {
         case 1:
-            timkiem(sv, sinhvienhientai);
-            luachoncuaban = 0;
+            searchByX(student, currentNumberOfStudent);
+            yourChoice = 0;
             break;
         case 2:
-            sapxep(sv, sinhvienhientai);
-            luachoncuaban = 0;
+            sortByX(student, currentNumberOfStudent);
+            yourChoice = 0;
             break;
         case 3:
-            sinhvienhientai = them(sv, sinhvienhientai);
-            luachoncuaban = 0;
+            currentNumberOfStudent = addInformation(student, currentNumberOfStudent);
+            yourChoice = 0;
             break;
         case 4:
-            sua(sv, sinhvienhientai);
-            luachoncuaban = 0;
+            modifyInformation(student, currentNumberOfStudent);
+            yourChoice = 0;
             break;
         case 5:
-            sinhvienhientai = xoa(sv, sinhvienhientai);
-            luachoncuaban = 0;
+            currentNumberOfStudent = deleteInformation(student, currentNumberOfStudent);
+            yourChoice = 0;
             break;
         } // end switch
     } // end while
-    luachoncuaban = 0;
-    ghifile(sv, sinhvienhientai);
+    yourChoice = 0;
+    writeToFile(student, currentNumberOfStudent);
 }
