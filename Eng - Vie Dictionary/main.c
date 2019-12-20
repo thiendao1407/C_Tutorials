@@ -1,4 +1,4 @@
-#include "ham.h"
+#include "functions.h"
 
 int main() {
     int yourchoice = 0;

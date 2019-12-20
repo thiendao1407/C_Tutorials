@@ -1,4 +1,4 @@
-#include "ham.h"
+#include "functions.h"
 
 vocabulary * add(vocabulary *head) {
     printf("Please enter the new word: ");
