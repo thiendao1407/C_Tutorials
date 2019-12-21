@@ -1,9 +1,9 @@
 #include "functions.h"
 
 int main() {
-    int currentNumberOfStudent = 0;
+    int currentStudentNumbers = 0;
     studentInformation student[MAX];
-    currentNumberOfStudent = readFromFile(student, currentNumberOfStudent);
+    currentStudentNumbers = readFromFile(student, currentStudentNumbers);
     while (yourChoice != 6) {
         printf("\n----------------------------");
         printf("\n1. Search\n\n2. Sort\n\n3. Add\n\n4. Modify\n\n5. Delete\n\n6. Exit\n");
@@ -13,27 +13,27 @@ int main() {
         yourChoice = atoi(ctemp);
         switch (yourChoice) {
         case 1:
-            searchByX(student, currentNumberOfStudent);
+            searchByX(student, currentStudentNumbers);
             yourChoice = 0;
             break;
         case 2:
-            sortByX(student, currentNumberOfStudent);
+            sortByX(student, currentStudentNumbers);
             yourChoice = 0;
             break;
         case 3:
-            currentNumberOfStudent = addInformation(student, currentNumberOfStudent);
+            currentStudentNumbers = addInformation(student, currentStudentNumbers);
             yourChoice = 0;
             break;
         case 4:
-            modifyInformation(student, currentNumberOfStudent);
+            modifyInformation(student, currentStudentNumbers);
             yourChoice = 0;
             break;
         case 5:
-            currentNumberOfStudent = deleteInformation(student, currentNumberOfStudent);
+            currentStudentNumbers = deleteInformation(student, currentStudentNumbers);
             yourChoice = 0;
             break;
         } // end switch
     } // end while
     yourChoice = 0;
-    writeToFile(student, currentNumberOfStudent);
+    writeToFile(student, currentStudentNumbers);
 }

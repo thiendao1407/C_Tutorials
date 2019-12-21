@@ -30,31 +30,31 @@ typedef struct StudentInformation {
 
 void clear_the_input_buffer();
 
-void searchByX(studentInformation student[], int currentNumberOfStudent);
-void searchByName(studentInformation student[], int currentNumberOfStudent);
-void searchByPhoneNumber(studentInformation student[], int currentNumberOfStudent);
+void searchByX(studentInformation student[], int currentStudentNumbers);
+void searchByName(studentInformation student[], int currentStudentNumbers);
+void searchByPhoneNumber(studentInformation student[], int currentStudentNumbers);
 
-void sortByX(studentInformation student[], int currentNumberOfStudent);
-void sortByMathScore(studentInformation student[], int currentNumberOfStudent);
-void sortByForeignLanguagesScore(studentInformation student[], int currentNumberOfStudent);
-void sortByLiteratureScore(studentInformation student[], int currentNumberOfStudent);
+void sortByX(studentInformation student[], int currentStudentNumbers);
+void sortByMathScore(studentInformation student[], int currentStudentNumbers);
+void sortByForeignLanguagesScore(studentInformation student[], int currentStudentNumbers);
+void sortByLiteratureScore(studentInformation student[], int currentStudentNumbers);
 
-int addInformation(studentInformation student[], int currentNumberOfStudent);
-void modifyInformation(studentInformation student[], int currentNumberOfStudent);
-int deleteInformation(studentInformation student[], int currentNumberOfStudent);
+int addInformation(studentInformation student[], int currentStudentNumbers);
+void modifyInformation(studentInformation student[], int currentStudentNumbers);
+int deleteInformation(studentInformation student[], int currentStudentNumbers);
 
-void dateOfBirth(studentInformation student[], int currentNumberOfStudent);
-void name(studentInformation student[], int currentNumberOfStudent);
-void phoneNumber(studentInformation student[], int currentNumberOfStudent);
-void address(studentInformation student[], int currentNumberOfStudent);
+void dateOfBirth(studentInformation student[], int currentStudentNumbers);
+void name(studentInformation student[], int currentStudentNumbers);
+void phoneNumber(studentInformation student[], int currentStudentNumbers);
+void address(studentInformation student[], int currentStudentNumbers);
 
-void mathScore(studentInformation student[], int currentNumberOfStudent);
-void foreignLanguagesScore(studentInformation student[], int currentNumberOfStudent);
-void literatureScore(studentInformation student[], int currentNumberOfStudent);
+void mathScore(studentInformation student[], int currentStudentNumbers);
+void foreignLanguagesScore(studentInformation student[], int currentStudentNumbers);
+void literatureScore(studentInformation student[], int currentStudentNumbers);
 
 
-void writeToFile(studentInformation student[], int currentNumberOfStudent);
+void writeToFile(studentInformation student[], int currentStudentNumbers);
 
-int readFromFile(studentInformation student[], int currentNumberOfStudent);
+int readFromFile(studentInformation student[], int currentStudentNumbers);
 
 
